@@ -1,4 +1,4 @@
-# Learning Disability Detection System
+# NEUROSENSE - Learning Disability Detection System
 
 AI-powered early detection of Dysgraphia and Dyscalculia with multi-language support.
 
