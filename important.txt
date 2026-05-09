@@ -1,0 +1,25 @@
+uvicorn main:app --reload
+npm install recharts
+npm run dev
+npm run typecheck
+pakages #4
+
+conda create -n ai_env4 python=3.10
+conda activate ai_env4
+conda install -y numpy pandas scikit-learn matplotlib seaborn jupyterlab
+conda install -y tensorflow pytorch torchvision torchaudio cpuonly -c pytorch
+conda install -y fastapi uvicorn requests python-dotenv
+conda install -y pillow opencv pandas scikit-image
+conda install -y joblib pyyaml h5py
+conda install -y jupyterlab plotly
+pip install supabase gotrue postgrest httpx
+pip install shap fpdf
+conda env export > environment.yml
+conda env create -f environment.yml
+
+pip install sqlalchemy alembic "passlib[bcrypt]" "python-jose[cryptography]" python-multipart
+
+sqlalchemy
+bcrypt
+python-jose
+python-multipart
