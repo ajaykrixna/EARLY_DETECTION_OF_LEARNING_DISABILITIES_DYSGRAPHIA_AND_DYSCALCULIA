@@ -6,6 +6,7 @@ from typing import Optional, Dict, List
 import os
 import tensorflow as tf
 import tf_keras
+import keras
 
 class CompatInputLayer(tf_keras.layers.InputLayer):
     def __init__(self, *args, **kwargs):
@@ -31,11 +32,11 @@ class DysgraphiaService:
         try:
             model_path = os.getenv(
                 "DYSGRAPHIA_MODEL_PATH",
-                "models/fixed_model.keras"
+                "models/rebuilt_model.keras"
             )
 
             if os.path.exists(model_path):
-                self.model = tf_keras.models.load_model(model_path, compile=False, custom_objects={'InputLayer': CompatInputLayer})
+                self.model = keras.models.load_model(model_path, compile=False)
                 self.input_shape = self.model.input_shape[1:]
                 print(f"✅ Dysgraphia model loaded successfully from {model_path}")
                 print(f"📐 Model expects input shape: {self.input_shape}")
